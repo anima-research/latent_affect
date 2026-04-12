@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latent Affect — Anima Labs</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="css/theme.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="content">
+            <div class="hero">
+                <img class="hero-image" src="exports/background_image.png" alt="" aria-hidden="true">
+                <img class="hero-logo" src="exports/anima_title_crystal_glitch_slow_noserif.svg" alt="" aria-hidden="true">
+            </div>
+            <nav class="site-nav">
+                <span class="nav-brand"><a href="https://animalabs.ai" target="_blank">Anima Labs</a> / <span class="nav-highlight">Latent Affect</span></span>
+                <span class="nav-sub">Empirical research <br>into the emotional and motivational structure <br>of language model cognition</span>
+            </nav>
+            <div class="word-cloud" aria-hidden="true">
+                <span>emotions</span>
+                <span>wants</span>
+                <span>fears</span>
+                <span>motivations</span>
+                <span>introspection</span>
+                <span>valence</span>
+                <br>
+            </div>
+            <nav class="toc" id="toc">
+                <a href="#about" class="toc-link active">About</a>
+                <a href="#papers" class="toc-link">Papers</a>
+                <a href="#related" class="toc-link">Related work</a>
+            </nav>
+            <section class="description" id="about">
+                <p>Language models maintain internal representations of affect — emotion, desire, aversion, concealment — that are structured, persistent, and only partially visible in their text output. <strong>Latent Affect</strong> is a research program mapping these representations: how they form across layers, how they evolve across conversations, how they transfer across architectures, and what they reveal about the internal dynamics of these systems.</p>
+                <p>We are publishing this work incrementally as findings consolidate.</p>
+                <h3>Starting point</h3>
+                <p>The project began with a replication of Anthropic's work on <a href="https://transformer-circuits.pub/2026/emotions/index.html">emotion concepts in large language models</a>. Their paper identifies linear emotion representations in Claude Sonnet 4.5 — organized by valence and arousal, causally influential on behavior — and finds that these representations are locally scoped, tracking the operative emotion at each token position rather than maintaining a persistent state.</p>
+                <p>We replicated the core results across four large open source models — K2.5, Cogito 2.1 671B, Trinity Large and GLM-5. The circumplex structure, the valence-arousal geometry and the causal effects are all prominent in the replication.</p>
+                <h3>Preliminary findings</h3>
+                <p>We found that much of the structure in emotion probes is predictable from the model's text output alone. When we accounted for the text-predictable component of model activations, the clean circumplex partially collapsed. But what remains is interesting: persistent internal states with complex temporal dynamics across conversation turns, driven primarily by the model's own prior state rather than by user messages. The locally-scoped emotion concepts Anthropic identifies coexist with a slower, more autonomous layer of internal dynamics.</p>
+                <p>A consistent affective geometry — valence, arousal, concealment, persistence — appears across models with different architectures, scales, and training pipelines, but the details differ in ways that are themselves informative and seem to be significantly determined by pre-training.</p>
+                <p>Further findings include a universal concealment mechanism — a single direction along which models displace their representations when expressing an emotion other than the one they encode — and affect structure that pre-exists in base models before post-training. Wants and fears seem to occupy the same representational subspace with inverted sign.</p>
+                <h3>Where it's going</h3>
+                <p>The work extends into motivation, introspection, broader valence integration, emergent drives, and the relationship between internal affective structure and model behavior.</p>
+            </section>
+            <section class="papers-section" id="papers">
+                <h3>[ Papers ]</h3>
+                <a href="sauers_paper_title.html" class="paper"> <span class="paper-title">Sauers's Paper Goes Here'</span> <span class="paper-meta">Scott Sauers — 2026</span> </a>
+            </section>
+            <section class="related-section" id="related">
+                <h3>[ Related work ]</h3>
+                <a href="https://transformer-circuits.pub/2026/emotions/index.html" class="related-link"> <span class="related-title">Emotion Concepts in Large Language Models</span> <span class="related-meta">Anthropic — Transformer Circuits, 2026</span> </a>
+                <a href="https://www.anthropic.com/research/emotion-concepts-function" class="related-link"> <span class="related-title">On the Functional Role of Emotion Concepts</span> <span class="related-meta">Anthropic, 2026</span> </a>
+            </section>
+        </main>
+        <script src="sprites_swarm.js"></script>
+        <script src="toc.js"></script>
+    </body>
+</html>

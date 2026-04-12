@@ -1,0 +1,29 @@
+# Ignore everything by default
+*
+
+# Allow directory traversal (so git can see nested files)
+!*/
+
+# Web assets only
+!*.html
+!*.css
+!*.js
+!*.png
+!*.jpg
+!*.jpeg
+!*.svg
+!*.ico
+!*.webp
+!*.gif
+!*.woff
+!*.woff2
+
+# Deployment and repo infrastructure
+!Dockerfile
+!nginx.conf
+!.gitignore
+!LICENSE
+
+# OS junk (belt and suspenders)
+.DS_Store
+Thumbs.db

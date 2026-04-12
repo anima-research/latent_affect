@@ -1,0 +1,220 @@
+<svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Diagonal `\` (down-right) -->
+    <linearGradient id="crystalDownDiag" gradientUnits="userSpaceOnUse"
+                    x1="15" y1="20" x2="25" y2="60" spreadMethod="reflect">
+      <stop offset="0%" style="stop-color:#4a7c8e;stop-opacity:0.6"/>
+      <stop offset="33%" style="stop-color:#7fb069;stop-opacity:0.9"/>
+      <stop offset="66%" style="stop-color:#d4a574;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#8b7aa6;stop-opacity:0.8"/>
+    </linearGradient>
+
+    <!-- Diagonal `/` (up-right) -->
+    <linearGradient id="crystalUpDiag" gradientUnits="userSpaceOnUse"
+                    x1="15" y1="60" x2="25" y2="20" spreadMethod="reflect">
+      <stop offset="0%" style="stop-color:#4a7c8e;stop-opacity:0.6"/>
+      <stop offset="33%" style="stop-color:#7fb069;stop-opacity:0.9"/>
+      <stop offset="66%" style="stop-color:#d4a574;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#8b7aa6;stop-opacity:0.8"/>
+    </linearGradient>
+
+    <!-- Vertical -->
+    <linearGradient id="crystalVertical" gradientUnits="userSpaceOnUse"
+                    x1="0" y1="20" x2="0" y2="60" spreadMethod="reflect">
+      <stop offset="0%" style="stop-color:#4a7c8e;stop-opacity:0.6"/>
+      <stop offset="33%" style="stop-color:#7fb069;stop-opacity:0.9"/>
+      <stop offset="66%" style="stop-color:#d4a574;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#8b7aa6;stop-opacity:0.8"/>
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Letter forms — gentle independent fades on each line -->
+  <g transform="translate(10, 0)">
+
+    <!-- A — diagonals fade gently -->
+    <g id="A1">
+      <line x1="15" y1="60" x2="25" y2="20" stroke="url(#crystalUpDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.9;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="9s" begin="-4.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="25" y1="20" x2="35" y2="60" stroke="url(#crystalDownDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.9;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="11s" begin="-3.7s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Nodes -->
+      <circle cx="15" cy="60" r="2" fill="#4a7c8e" opacity="0.9">
+        <animate attributeName="r" values="2;3;2" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="25" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="60" r="2" fill="#4a7c8e" opacity="0.9">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="40" r="1.5" fill="#d4a574" opacity="0.8"/>
+      <circle cx="30" cy="40" r="1.5" fill="#d4a574" opacity="0.8"/>
+    </g>
+
+    <!-- N — diagonal + verticals all fading independently -->
+    <g id="N" transform="translate(55, 0)">
+      <line x1="15" y1="60" x2="15" y2="20" stroke="url(#crystalVertical)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.85;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="10s" begin="-5.1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="15" y1="20" x2="35" y2="60" stroke="url(#crystalDownDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.2;0.9;0.2" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="13s" begin="-6.4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="35" y1="60" x2="35" y2="20" stroke="url(#crystalVertical)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.85;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="12s" begin="-2.3s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Nodes -->
+      <circle cx="15" cy="60" r="2" fill="#4a7c8e" opacity="0.9"/>
+      <circle cx="15" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="60" r="2" fill="#4a7c8e" opacity="0.9"/>
+      <circle cx="35" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="25" cy="40" r="1.5" fill="#8b7aa6" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- I — central pole and serifs all fading independently -->
+    <g id="I" transform="translate(110, 0)">
+      <!-- central pole -->
+      <line x1="20" y1="20" x2="20" y2="60" stroke="url(#crystalVertical)" stroke-width="2.5" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.95;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="11s" begin="-3.8s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Nodes -->
+      <circle cx="20" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="60" r="2" fill="#4a7c8e" opacity="0.9">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="10" cy="20" r="1.5" fill="#d4a574" opacity="0.6"/>
+      <circle cx="30" cy="20" r="1.5" fill="#d4a574" opacity="0.6"/>
+      <circle cx="10" cy="60" r="1.5" fill="#8b7aa6" opacity="0.6"/>
+      <circle cx="30" cy="60" r="1.5" fill="#8b7aa6" opacity="0.6"/>
+    </g>
+
+    <!-- M — verticals and inner diagonals all fading independently -->
+    <g id="M" transform="translate(160, 0)">
+      <line x1="15" y1="60" x2="15" y2="20" stroke="url(#crystalVertical)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.85;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="10s" begin="-5.6s" repeatCount="indefinite"/>
+      </line>
+      <line x1="15" y1="20" x2="25" y2="35" stroke="url(#crystalDownDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.2;0.9;0.2" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="9s" begin="-4.3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="25" y1="35" x2="35" y2="20" stroke="url(#crystalUpDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.2;0.9;0.2" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="12s" begin="-1.9s" repeatCount="indefinite"/>
+      </line>
+      <line x1="35" y1="20" x2="35" y2="60" stroke="url(#crystalVertical)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.85;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="13s" begin="-3.2s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Nodes -->
+      <circle cx="15" cy="60" r="2" fill="#4a7c8e" opacity="0.9"/>
+      <circle cx="15" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="25" cy="35" r="2" fill="#d4a574" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="60" r="2" fill="#4a7c8e" opacity="0.9"/>
+    </g>
+
+    <!-- A — diagonals fade gently -->
+    <g id="A2" transform="translate(215, 0)">
+      <line x1="15" y1="60" x2="25" y2="20" stroke="url(#crystalUpDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.9;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="10s" begin="-2.7s" repeatCount="indefinite"/>
+      </line>
+      <line x1="25" y1="20" x2="35" y2="60" stroke="url(#crystalDownDiag)" stroke-width="2" opacity="0.15">
+        <animate attributeName="opacity"
+                 values="0.15;0.9;0.15" keyTimes="0;0.5;1"
+                 calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                 dur="12s" begin="-5.4s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Nodes -->
+      <circle cx="15" cy="60" r="2" fill="#4a7c8e" opacity="0.9">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="4.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="25" cy="20" r="2" fill="#7fb069" opacity="0.8">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="60" r="2" fill="#4a7c8e" opacity="0.9">
+        <animate attributeName="r" values="2;3;2" dur="4s" begin="5.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="40" r="1.5" fill="#d4a574" opacity="0.8"/>
+      <circle cx="30" cy="40" r="1.5" fill="#d4a574" opacity="0.8"/>
+    </g>
+
+    <!-- Connecting energy lines -->
+    <path d="M 40 40 Q 70 38 100 40" stroke="#7fb069" stroke-width="0.5" fill="none" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0" dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <path d="M 140 40 Q 170 42 200 40" stroke="#d4a574" stroke-width="0.5" fill="none" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0" dur="8s" begin="4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Floating particles -->
+    <circle cx="80" cy="30" r="1" fill="#7fb069" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="150" cy="50" r="1" fill="#8b7aa6" opacity="0">
+      <animate attributeName="opacity" values="0;0.4;0" dur="5s" begin="2.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="5s" begin="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
