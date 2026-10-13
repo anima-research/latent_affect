@@ -23,6 +23,7 @@
 !nginx.conf
 !.gitignore
 !LICENSE
+!README.md
 
 # OS junk (belt and suspenders)
 .DS_Store
