@@ -24,7 +24,7 @@ To serve it with Docker, set `PORT` to the port nginx should listen on:
 
 ```sh
 docker build -t latent-affect .
-docker run -e PORT=8080 -p 8080:8080 latent-affect
+docker run -e PORT=8080 -p 127.0.0.1:8080:8080 latent-affect
 ```
 
-Then open http://localhost:8080.
+Then open http://127.0.0.1:8080. The `-p` option publishes the port on the loopback address only.
