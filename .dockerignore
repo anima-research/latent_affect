@@ -5,7 +5,6 @@
 .gitignore
 .dockerignore
 Dockerfile
-nginx.conf
 LICENSE
 .DS_Store
 Thumbs.db
