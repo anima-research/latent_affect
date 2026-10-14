@@ -20,6 +20,7 @@
 
 # Deployment and repo infrastructure
 !Dockerfile
+!.dockerignore
 !nginx.conf
 !.gitignore
 !LICENSE
