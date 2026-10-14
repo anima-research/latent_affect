@@ -1,6 +1,7 @@
 FROM nginx:alpine
-COPY . /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/templates/default.conf.template
-# nginx.conf must stay in the build context for the COPY above, so it is not in
-# .dockerignore; take it back out of the web root.
-RUN rm -f /usr/share/nginx/html/nginx.conf
+# Only the site goes under the web root: pages, styles, scripts, and the two
+# asset directories. Nothing else from the build context is copied.
+COPY *.html *.css *.js /usr/share/nginx/html/
+COPY css /usr/share/nginx/html/css
+COPY exports /usr/share/nginx/html/exports
