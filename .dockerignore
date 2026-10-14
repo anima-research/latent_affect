@@ -1,0 +1,11 @@
+# Only the site belongs in the image. Without this file `COPY . /usr/share/nginx/html`
+# puts the whole build context under the web root, including .git/ (and with it
+# .git/config, which can hold a token from a clone URL) and any untracked file.
+.git
+.gitignore
+.dockerignore
+Dockerfile
+nginx.conf
+LICENSE
+.DS_Store
+Thumbs.db
